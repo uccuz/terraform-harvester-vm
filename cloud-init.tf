@@ -1,8 +1,8 @@
 resource "harvester_cloudinit_secret" "cloud-config" {
-  name = "cloud-config"
+  name      = "cloud-config"
   namespace = var.namespace
 
-  user_data    = <<-EOF
+  user_data = <<-EOF
     #cloud-config
     user: ${var.username}
     password: ${var.password}

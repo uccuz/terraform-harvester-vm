@@ -11,11 +11,11 @@ resource "harvester_virtualmachine" "virtualmachine" {
   efi         = true
   secure_boot = false
 
-  hostname        = var.hostname
+  hostname = var.hostname
 
   network_interface {
-    name         = "nic-1"
-    network_name = var.network
+    name           = "nic-1"
+    network_name   = var.network
     wait_for_lease = true
   }
 

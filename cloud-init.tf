@@ -16,6 +16,9 @@ resource "harvester_cloudinit_secret" "cloud-config" {
         - enable
         - '--now'
         - qemu-guest-agent
+    ssh_authorized_keys:
+      - >-
+        ${var.ssh_key != "" ? var.ssh_key : file(var.ssh_key_path)}
     EOF
 
   network_data = <<-EOF
